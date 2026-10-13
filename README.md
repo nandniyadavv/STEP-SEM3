@@ -13,3 +13,4 @@ Daily progress log for Semester 3 STEP sessions.
 - Session 7 — Encapsulation
 - Session 8 — Inheritance and Polymorphism
 - Session 9 — Abstraction and Interfaces
+- Session 10 — Data Structures
