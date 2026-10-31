@@ -1,0 +1,1 @@
+public class Problem4_QueueInOrder { static int firstBreak(int[] a){for(int i=1;i<a.length;i++)if(a[i]<a[i-1])return i;return -1;} public static void main(String[]x){System.out.println(firstBreak(new int[]{3,5,5,8,6,9}));}}
