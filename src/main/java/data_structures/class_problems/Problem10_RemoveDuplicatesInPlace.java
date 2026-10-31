@@ -1,0 +1,1 @@
+import java.util.Arrays; public class Problem10_RemoveDuplicatesInPlace { static int removeDuplicates(int[]a){if(a.length==0)return 0;int w=1;for(int r=1;r<a.length;r++)if(a[r]!=a[w-1])a[w++]=a[r];return w;} public static void main(String[]x){int[]a={1,1,2,2,2,3,4,4,5};int n=removeDuplicates(a);System.out.println("length="+n+", values="+Arrays.toString(Arrays.copyOf(a,n)));}}
