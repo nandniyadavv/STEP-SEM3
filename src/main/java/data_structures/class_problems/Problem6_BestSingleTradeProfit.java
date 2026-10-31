@@ -1,1 +1,19 @@
-public class Problem6_BestSingleTradeProfit { static int maxProfit(int[]p){int min=Integer.MAX_VALUE,best=0;for(int v:p){if(v<min)min=v;else best=Math.max(best,v-min);}return best;} public static void main(String[]x){System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));}}
+public class Problem6_BestSingleTradeProfit {
+    static int maxProfit(int[] prices) {
+        int minimumPrice = Integer.MAX_VALUE;
+        int bestProfit = 0;
+
+        for (int price : prices) {
+            if (price < minimumPrice) {
+                minimumPrice = price;
+            } else {
+                bestProfit = Math.max(bestProfit, price - minimumPrice);
+            }
+        }
+        return bestProfit;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+    }
+}
