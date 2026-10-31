@@ -1,0 +1,1 @@
+import java.util.Arrays; public class Problem3_LibraryBookShelf { static void shelf(int[] a){for(int i=1;i<a.length;i++){int v=a[i],j=i-1;while(j>=0&&a[j]>v){a[j+1]=a[j];j--;}a[j+1]=v;System.out.println("After placing "+v+": "+Arrays.toString(a));}} public static void main(String[]x){shelf(new int[]{30,10,40,20});}}
