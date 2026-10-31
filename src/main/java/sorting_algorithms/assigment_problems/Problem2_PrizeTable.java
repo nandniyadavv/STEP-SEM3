@@ -1,1 +1,31 @@
-import java.util.Arrays; public class Problem2_PrizeTable { static int prizeTable(int[] a){int swaps=0;for(int i=0;i<a.length-1;i++){int max=i;for(int j=i+1;j<a.length;j++)if(a[j]>a[max])max=j;if(max!=i){int t=a[i];a[i]=a[max];a[max]=t;swaps++;}}return swaps;} public static void main(String[]x){int[] a={45,90,60,75};int n=prizeTable(a);System.out.println(Arrays.toString(a));System.out.println("Swaps: "+n);}}
+import java.util.Arrays;
+
+public class Problem2_PrizeTable {
+    static int prizeTable(int[] marks) {
+        int swaps = 0;
+
+        for (int i = 0; i < marks.length - 1; i++) {
+            int maxIndex = i;
+            for (int j = i + 1; j < marks.length; j++) {
+                if (marks[j] > marks[maxIndex]) {
+                    maxIndex = j;
+                }
+            }
+
+            if (maxIndex != i) {
+                int temp = marks[i];
+                marks[i] = marks[maxIndex];
+                marks[maxIndex] = temp;
+                swaps++;
+            }
+        }
+        return swaps;
+    }
+
+    public static void main(String[] args) {
+        int[] marks = {45, 90, 60, 75};
+        int swaps = prizeTable(marks);
+        System.out.println(Arrays.toString(marks));
+        System.out.println("Swaps: " + swaps);
+    }
+}
