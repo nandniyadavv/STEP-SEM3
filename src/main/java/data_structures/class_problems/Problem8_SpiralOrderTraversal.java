@@ -1,1 +1,48 @@
-import java.util.ArrayList;import java.util.List; public class Problem8_SpiralOrderTraversal { static List<Integer>spiralOrder(int[][]g){List<Integer>o=new ArrayList<>();if(g.length==0)return o;int t=0,b=g.length-1,l=0,r=g[0].length-1;while(t<=b&&l<=r){for(int c=l;c<=r;c++)o.add(g[t][c]);t++;for(int i=t;i<=b;i++)o.add(g[i][r]);r--;if(t<=b){for(int c=r;c>=l;c--)o.add(g[b][c]);b--;}if(l<=r){for(int i=b;i>=t;i--)o.add(g[i][l]);l++;}}return o;} public static void main(String[]x){System.out.println(spiralOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));}}
+import java.util.ArrayList;
+import java.util.List;
+
+public class Problem8_SpiralOrderTraversal {
+    static List<Integer> spiralOrder(int[][] grid) {
+        List<Integer> result = new ArrayList<>();
+        if (grid.length == 0) {
+            return result;
+        }
+
+        int top = 0;
+        int bottom = grid.length - 1;
+        int left = 0;
+        int right = grid[0].length - 1;
+
+        while (top <= bottom && left <= right) {
+            for (int column = left; column <= right; column++) {
+                result.add(grid[top][column]);
+            }
+            top++;
+
+            for (int row = top; row <= bottom; row++) {
+                result.add(grid[row][right]);
+            }
+            right--;
+
+            if (top <= bottom) {
+                for (int column = right; column >= left; column--) {
+                    result.add(grid[bottom][column]);
+                }
+                bottom--;
+            }
+
+            if (left <= right) {
+                for (int row = bottom; row >= top; row--) {
+                    result.add(grid[row][left]);
+                }
+                left++;
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[][] grid = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        System.out.println(spiralOrder(grid));
+    }
+}
