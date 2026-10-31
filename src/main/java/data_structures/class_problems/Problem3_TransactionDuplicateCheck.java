@@ -1,0 +1,1 @@
+import java.util.HashSet;import java.util.Set; public class Problem3_TransactionDuplicateCheck { static boolean hasDuplicate(String[]a){Set<String>s=new HashSet<>();for(String v:a)if(!s.add(v))return true;return false;} public static void main(String[]x){System.out.println(hasDuplicate(new String[]{"TXN1","TXN2","TXN1"}));}}
