@@ -1,1 +1,39 @@
-public class Problem1_LibraryCatalogLookup { static class Book{String isbn,title;Book(String i,String t){isbn=i;title=t;}} static String findBook(Book[]a,String target){int l=0,h=a.length-1;while(l<=h){int m=l+(h-l)/2,c=a[m].isbn.compareTo(target);if(c==0)return a[m].title;if(c<0)l=m+1;else h=m-1;}return "Not Found";} public static void main(String[]x){Book[]b={new Book("0001112223","Introduction to Algebra"),new Book("0002223334","Beginning Python"),new Book("0003334445","Classic Mythology")};System.out.println(findBook(b,"0003334445"));}}
+public class Problem1_LibraryCatalogLookup {
+    static class Book {
+        String isbn;
+        String title;
+
+        Book(String isbn, String title) {
+            this.isbn = isbn;
+            this.title = title;
+        }
+    }
+
+    static String findBook(Book[] catalog, String targetIsbn) {
+        int low = 0;
+        int high = catalog.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            int comparison = catalog[mid].isbn.compareTo(targetIsbn);
+
+            if (comparison == 0) {
+                return catalog[mid].title;
+            } else if (comparison < 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return "Not Found";
+    }
+
+    public static void main(String[] args) {
+        Book[] catalog = {
+            new Book("0001112223", "Introduction to Algebra"),
+            new Book("0002223334", "Beginning Python"),
+            new Book("0003334445", "Classic Mythology")
+        };
+        System.out.println(findBook(catalog, "0003334445"));
+    }
+}
