@@ -1,0 +1,1 @@
+import java.util.HashSet;import java.util.Set; public class Problem5_PairWithTargetSum { static boolean hasPairWithSum(int[]a,int target){Set<Integer>s=new HashSet<>();for(int v:a){if(s.contains(target-v))return true;s.add(v);}return false;} public static void main(String[]x){System.out.println(hasPairWithSum(new int[]{2,7,11,15},9));}}
