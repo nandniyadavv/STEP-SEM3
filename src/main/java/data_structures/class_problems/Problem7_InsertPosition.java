@@ -1,0 +1,1 @@
+public class Problem7_InsertPosition { static int searchInsertPosition(int[]a,int target){int l=0,h=a.length;while(l<h){int m=l+(h-l)/2;if(a[m]<target)l=m+1;else h=m;}return l;} public static void main(String[]x){System.out.println(searchInsertPosition(new int[]{1,3,5,6},2));}}
